@@ -5,6 +5,7 @@ body {
 }
 
 body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -20,6 +21,7 @@ main {
 h1 {
   font-family: 'Abel', sans-serif;
   color: #1B5E18;
+  text-align: center;
 }
 
 .logo {
@@ -27,4 +29,82 @@ h1 {
   background-repeat: no-repeat;
   height: 250px;
   width: 250px;
+}
+
+.social {
+  display: flex;
+  max-width: 95%;
+}
+
+.icon {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 1px 0 5px rgba(0,0,0,.5);
+  height: 150px;
+  margin: 10px;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 20px;
+  transition: box-shadow .2s ease;
+  position: relative;
+  width: 150px;
+}
+
+.icon:hover {
+  box-shadow: 1px 0 10px #1B5E18;
+}
+
+.icon--facebook::before,
+.icon--twitter::before {
+  content: '';
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  bottom: 0;
+  height: 85px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  transition: transform .3s linear;
+  right: 0;
+  top: 0;
+  width: 85px;
+}
+
+.icon--facebook::before {
+  background-image: url(img/icon-facebook.svg);
+}
+
+.icon--twitter::before {
+  background-image: url(img/icon-twitter.svg);
+}
+
+.icon--facebook:hover::before,
+.icon--twitter:hover::before {
+  transform: translateY(-35%);
+}
+
+.icon--facebook::after,
+.icon--twitter::after {
+  bottom: -10%;
+  color: #1B5E18;
+  font-weight: bold;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  transition: transform .3s linear;
+  width: 100%;
+}
+
+.icon--facebook::after {
+  content: 'Like Us!';
+}
+
+.icon--twitter::after {
+  content: 'Follow Us!';
+}
+
+.icon--facebook:hover::after,
+.icon--twitter:hover::after {
+  transform: translateY(-300%);
 }
