@@ -50,7 +50,7 @@ h1 {
 .icon {
   background-color: white;
   border-radius: 4px;
-  box-shadow: 1px 0 5px rgba(0,0,0,.5);
+  box-shadow: 0 1px 3px rgba(0,0,0,.5);
   height: 150px;
   margin: 10px;
   max-width: 100%;
@@ -62,7 +62,7 @@ h1 {
 }
 
 .icon:hover {
-  box-shadow: 1px 0 10px #1B5E18;
+  box-shadow: 0px 1px 5px #1B5E18;
 }
 
 .icon--facebook::before,
