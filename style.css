@@ -11,8 +11,12 @@ body {
 }
 
 main {
-  background-image: url(img/icon-ixda-blur-big.svg);
-  background-position: top left;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 10000ms;
+  animation-name: movingBg;
+  background-image: url(img/icon-cover.svg);
+  background-position: 0 0;
   background-repeat: no-repeat;
   background-size: cover;
   align-items: center;
@@ -114,4 +118,13 @@ h1 {
 .icon--facebook:hover::after,
 .icon--twitter:hover::after {
   transform: translateY(-300%);
+}
+
+
+@keyframes movingBg {
+  0% { background-position-x: 0; }
+  25% { background-position-x: -10%; }
+  50% { background-position-x: 0; }
+  75% { background-position-x: 10%; }
+  100% { background-position-x: 0; }
 }
