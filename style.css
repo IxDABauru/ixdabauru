@@ -32,7 +32,9 @@ h1 {
 .logo {
   background-image: url(img/logo.svg);
   background-repeat: no-repeat;
+  display: table;
   height: 250px;
+  margin: 0 auto;
   width: 250px;
 }
 
