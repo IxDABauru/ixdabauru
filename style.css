@@ -17,7 +17,7 @@ main {
   animation-name: movingBg;
   background-image: url(img/icon-cover.svg);
   background-position: 0 0;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
   align-items: center;
   display: flex;
@@ -70,7 +70,8 @@ h1 {
 }
 
 .icon--facebook::before,
-.icon--twitter::before {
+.icon--twitter::before,
+.icon--slack::before {
   content: '';
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -93,13 +94,19 @@ h1 {
   background-image: url(img/icon-twitter.svg);
 }
 
+.icon--slack::before {
+  background-image: url(img/icon-slack.svg);
+}
+
 .icon--facebook:hover::before,
-.icon--twitter:hover::before {
+.icon--twitter:hover::before,
+.icon--slack:hover::before {
   transform: translateY(-35%);
 }
 
 .icon--facebook::after,
-.icon--twitter::after {
+.icon--twitter::after,
+.icon--slack::after {
   bottom: -10%;
   color: #1B5E18;
   font-weight: bold;
@@ -119,16 +126,21 @@ h1 {
   content: 'Follow Us!';
 }
 
+.icon--slack::after {
+  content: 'Join Us!';
+}
+
 .icon--facebook:hover::after,
-.icon--twitter:hover::after {
+.icon--twitter:hover::after,
+.icon--slack:hover::after {
   transform: translateY(-300%);
 }
 
 
 @keyframes movingBg {
   0% { background-position-x: 0; }
-  25% { background-position-x: -10%; }
+  25% { background-position-x: 25%; }
   50% { background-position-x: 0; }
-  75% { background-position-x: 10%; }
+  75% { background-position-x: 15%; }
   100% { background-position-x: 0; }
 }
