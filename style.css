@@ -5,7 +5,7 @@ body {
 }
 
 body {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: 'Abel', sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -46,7 +46,10 @@ h1 {
 }
 
 .social {
+  align-items: center;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   max-width: 95%;
 }
 
@@ -58,9 +61,10 @@ h1 {
   margin: 10px;
   max-height: 65%;
   max-width: 100%;
+  min-width: 100px;
   overflow: hidden;
   padding: 20px;
-  transition: box-shadow .2s ease;
+  transition: box-shadow .3s linear;
   position: relative;
   width: 150px;
 }
@@ -69,18 +73,18 @@ h1 {
   box-shadow: 0px 1px 5px #1B5E18;
 }
 
-.icon--facebook::before,
-.icon--twitter::before,
-.icon--slack::before {
+.icon::before {
   content: '';
   background-repeat: no-repeat;
   background-position: 0 0;
   bottom: 0;
+  filter: blur(0);
   height: 70px;
   left: 0;
   margin: auto;
+  opacity: .85;
   position: absolute;
-  transition: transform .3s linear;
+  transition: filter .3s linear;
   right: 0;
   top: 0;
   width: 70px;
@@ -98,23 +102,29 @@ h1 {
   background-image: url(img/icon-slack.svg);
 }
 
-.icon--facebook:hover::before,
-.icon--twitter:hover::before,
-.icon--slack:hover::before {
-  transform: translateY(-35%);
+.icon--whatsapp::before {
+  background-image: url(img/icon-whatsapp.svg);
 }
 
-.icon--facebook::after,
-.icon--twitter::after,
-.icon--slack::after {
-  bottom: -10%;
+.icon:hover::before {
+  filter: blur(25px);
+}
+
+.icon::after {
+  bottom: 0;
   color: #1B5E18;
+  font-size: 22px;
   font-weight: bold;
   left: 0;
+  height: 26px;
+  margin: auto;
+  opacity: 0;
   position: absolute;
+  right: 0;
   text-align: center;
   text-decoration: none;
-  transition: transform .3s linear;
+  transition: opacity .3s linear;
+  top: 0;
   width: 100%;
 }
 
@@ -130,10 +140,12 @@ h1 {
   content: 'Join Us!';
 }
 
-.icon--facebook:hover::after,
-.icon--twitter:hover::after,
-.icon--slack:hover::after {
-  transform: translateY(-300%);
+.icon--whatsapp::after {
+  content: 'Join Us!';
+}
+
+.icon:hover::after {
+  opacity: 1;
 }
 
 
